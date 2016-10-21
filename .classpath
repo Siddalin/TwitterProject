@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/httpclient-4.1-alpha1.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/httpcore-4.1-alpha1.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/jfreechart-1.0.14.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/mongo-2.10.1.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/twitter4j-async-3.0.3.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/twitter4j-core-3.0.3.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/twitter4j-examples-3.0.3.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/twitter4j-media-support-3.0.3.jar"/>
+	<classpathentry kind="lib" path="F:/Advance_DBMS/libs/twitter4j-stream-3.0.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
