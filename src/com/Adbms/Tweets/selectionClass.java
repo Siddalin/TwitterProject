@@ -36,19 +36,21 @@ public class selectionClass {
 	            // if collection doesn't exists, mongodb will create it for you
 	            DBCollection collection = db.getCollection("tweets");
 
-	            System.out.println("All Persons: "+collection.getCount());
+	            System.out.println("tweets : "+collection.getCount());
 	            
 	            System.out.println("Printed All tweets in database: ");
 	            //------------------------------------
 	            // get all document
-	            AggregationOutput output =collection.aggregate(new BasicDBObject("$group",new BasicDBObject("_id", "$location").append("total", new BasicDBObject("$sum", 1))));
-	            AggregationOutput output_1 = collection.aggregate( new BasicDBObject("$group",  new BasicDBObject("_id", "$location").append("count", new BasicDBObject("$sum", 1)))); 
-	        
-	          
-	            for (DBObject doc : output_1.results()) { 
-	                 System.out.println(doc.get("_id").toString()); 
-	            } 
-	     
+	           
+	            AggregationOutput output = collection.aggregate(
+	                    new BasicDBObject("$group",
+	                            new BasicDBObject("_id", "$location ")
+	                                    .append("count", new BasicDBObject("$sum", 1))));
+
+	            for (final DBObject result: output.results())
+	            {
+	            	System.out.println(result);
+	            }
 	           
 	           /* DBCursor cursor = collection.find();
 	            try {
@@ -59,6 +61,7 @@ public class selectionClass {
 	                cursor.close();
 	            }*/
 	 
+	            
 	        } catch (MongoException | UnknownHostException e) {
 	            e.printStackTrace();
 	        }
