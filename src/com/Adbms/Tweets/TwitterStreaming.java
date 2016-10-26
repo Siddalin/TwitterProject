@@ -22,7 +22,7 @@ public class TwitterStreaming {
         try
         {
         	Mongo m = new Mongo("localhost", 27011);
-            DB db = m.getDB("twitterdb");
+            DB db = m.getDB("Twitter");
 //            int tweetCount = 100;
             
             final DBCollection coll = db.getCollection("tweets");
@@ -45,14 +45,18 @@ public class TwitterStreaming {
                 	dbObj.put("name", status.getUser().getName());
                 	dbObj.put("text", status.getText());
                 	dbObj.put("source", status.getSource());
-//                	if(status.getGeoLocation() != null) {
-//	                	DBObject pos = new BasicDBObject();
-//	                	pos.put("long", status.getGeoLocation().getLongitude());
-//	                	pos.put("lat", status.getGeoLocation().getLatitude());
-//	                	dbObj.put("pos", pos);
-//                	} else if( status.getPlace() != null ) {
-//                		dbObj.put("country", status.getPlace().getCountry());
-//                	}
+                	dbObj.put("location ", status.getPlace().getCountry());
+
+                	
+                	/*if(status.getGeoLocation() != null) {
+	                	DBObject pos = new BasicDBObject();
+	                	pos.put("long", status.getGeoLocation().getLongitude());
+	                	pos.put("lat", status.getGeoLocation().getLatitude());
+	                	dbObj.put("pos", pos);
+                	} else if( status.getPlace() != null ) {
+                		dbObj.put("country", status.getPlace().getCountry());
+                	}*/
+                	
                 	coll.insert(dbObj);
 //                    System.out.println(++count);
                 }
